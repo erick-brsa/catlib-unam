@@ -30,10 +30,18 @@ struct Libro {
     int cantidad;
 };
 
+struct Registro {
+    int numero_cuenta;
+    int clave;
+    char fecha[11];
+};
+
 ```
 Las cuentas de los usuarios tienen la estructura de Cuenta, es decir, los usuarios tienen un número de cuenta, adeudos, cantidad de libros solicitados y una lista de los libros que están asociados a su cuenta (máximo 20 libros).
 
 Los libros tiene la estructura de Libro, es decir, tienen un nombre, una clave y la cantidad de unidades disponibles.
+
+Los registros asocian a un usuario con un libro y la fecha límite de devolución de un libro.
 
 Después de la definición de las estructuras se encuentran las definiciones de las funciones.
 
@@ -53,9 +61,11 @@ Después de la definición de las estructuras se encuentran las definiciones de 
 
 `solicitarLibro` la función solicita el código de un libro y válida que el libro no esté asociado con la cuenta. Si la condición se cumple, entonces manda a llamar a las funciones: `actualizarUsuarios`, `actualizarLibros`, `crearRegistro`.
 
-`devolverLibro` FALTA.
+`devolverLibro` válida que el usuario tenga libros asociados a su cuenta y actualiza los archivos de texto.
 
-`devolverLibro` FALTA.
+`pagarAdeudos` válida que el usuario tenga adeudos y pregunta por la cantidad de dinero que desea abonar a su cuenta.
+
+`actualizarRegistros` al entregar un libro el registro se eliminará y actualizará el archivo de texto de los registros.
 
 ### Integrantes
 * Bautista Rojas David
